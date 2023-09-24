@@ -1,6 +1,7 @@
 const el = document.getElementById("btn");
 if (el) {
     console.log("Button not null");
+
     el.addEventListener("click", (event) => {
         event.preventDefault();
         console.log("hello");
@@ -36,6 +37,7 @@ if (el) {
 
     });
 } else {
+  
     console.log("Button is null");
 }
 
@@ -48,6 +50,7 @@ function compareScore(arrayA, arrayB) {
         sumB += parseFloat(arrayB[i]);
     }
 
+    //Vu Lan Tuong - 20020761
     let averageA = sumA / arrayA.length;
     let averageB = sumB / arrayB.length;
 
@@ -65,6 +68,7 @@ function compareScore(arrayA, arrayB) {
         } else {
             console.log("Team B wins");
             document.getElementById("result").innerHTML = "Koalas wins the trophy";
+
         }
     }
     else {

@@ -12,7 +12,7 @@ const allPlayers = [...players1, ...players2];
 // 4. Create a new array 'players1Final' with the original team1 players plus 3 substitute players
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 
-
+//Vu Lan Tuong - 20020761
 // 6. Write a function 'printGoals' to print player names and the total number of goals
 function printGoals(...playerNames) {
     console.log(`${playerNames.length} goals were scored.`);

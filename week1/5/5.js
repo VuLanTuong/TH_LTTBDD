@@ -56,6 +56,7 @@ function compareScore(arrayA, arrayB) {
 
 
     if (averageA >= averageB * 2) {
+        //Vu Lan Tuong - 20020761
         console.log("Team A wins");
         document.getElementById("result").innerHTML = " Dolphins wins the trophy (" + averageA.toFixed(2) + " vs. " + averageB.toFixed(2) + ")";
     } else if (averageB >= averageA * 2) {

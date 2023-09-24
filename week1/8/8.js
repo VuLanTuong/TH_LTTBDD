@@ -54,6 +54,7 @@ function calculateTip(arr) {
     //     + tipList[2] + " , and the total value is " + (parseInt(arr[2]) + parseInt(tipList[2])) + " ;";
     // // console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is ${bill + tip}.");
 
+    //Vu Lan Tuong - 20020761
     totalList = [];
     totalList.push(parseInt(arr[0]) + parseInt(tipList[0]));
     totalList.push(parseInt(arr[1]) + parseInt(tipList[1]));
@@ -70,6 +71,7 @@ function calculateTip(arr) {
 
 bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
 calculateTip(bill);
+//Vu Lan Tuong - 20020761
 
 
 

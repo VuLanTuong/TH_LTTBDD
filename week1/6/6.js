@@ -58,8 +58,10 @@ function calculateTip(arr) {
     document.getElementById("result3").innerHTML = "The bill was " + arr[2] + " , the tip was "
         + tipList[2] + " , and the total value is " + (parseInt(arr[2]) + parseInt(tipList[2])) + " ;";
     // console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is ${bill + tip}.");
+    //Vu Lan Tuong - 20020761
 
     totalList = [];
+
     totalList.push(parseInt(arr[0]) + parseInt(tipList[0]));
     totalList.push(parseInt(arr[1]) + parseInt(tipList[1]));
     totalList.push(parseInt(arr[2]) + parseInt(tipList[2]));

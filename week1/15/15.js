@@ -8,7 +8,7 @@ const poll = {
         const selectedOption = Number(input);
 
         if (!isNaN(selectedOption) && selectedOption >= 1 && selectedOption <= this.options.length) {
-            this.replies[selectedOption - 1]++; // Adjust the index by subtracting 1
+            this.replies[selectedOption - 1]++;
         } else {
             alert('Invalid option! Please try again.');
         }
@@ -17,6 +17,7 @@ const poll = {
     },
 
     displayResults(type = 'array') {
+        //Vu Lan Tuong - 20020761
         const resultElement = document.getElementById('result');
 
         if (type === 'string') {

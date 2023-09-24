@@ -44,6 +44,8 @@ function compareBMI() {
 
     // var heightJohn = Number(document.getElementById("num3").value);
     // var weightJohn = Number(document.getElementById("num4").value);
+
+    //Vu Lan Tuong - 20020761
     var heightDouble = heightJohn * heightJohn;
     var bmiJohn = ((weightJohn / heightDouble) * 10000).toFixed(2);
     console.log(bmiJohn);

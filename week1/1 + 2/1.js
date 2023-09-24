@@ -11,6 +11,7 @@ if (el) {
     console.log("Button is null");
 }
 
+//Vu Lan Tuong - 20020761
 
 function compareBMI() {
     // if != null 
@@ -35,6 +36,8 @@ function compareBMI() {
 
     console.log(e1, e2, e3, e4);
 
+
+    //Vu Lan Tuong - 20020761
 
     // var weightMark = Number(document.getElementById("num2").value);
     var height2 = heightMark * heightMark;
