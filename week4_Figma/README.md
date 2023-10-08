@@ -2,11 +2,16 @@ Bài 2a figma
 
 
 
+
   ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/a544716d-2116-46c1-80e9-ea1a0464de7a)
+
+
 
 
  
   Khi click vào button eye để show password
+
+
 
 
  
@@ -19,7 +24,13 @@ Bài 2b figma
 
 
 
-  ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/702b4961-f96e-482a-9850-    b655fe38e6db)
+
+
+  ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/702b4961-f96e-482a-9850-b655fe38e6db)
+
+
+
+
 
 
  
@@ -37,7 +48,8 @@ Bài 2c figma
 
 
 
-    ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/91eaff0e-961d-4e77-b91a-ddfa3df5dcbd)
+ ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/4fc2972f-4760-4580-a783-bcb161d62996)
+
 
 
 
@@ -46,11 +58,14 @@ Bài 2c figma
 
 
  
-    ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/512ed7a9-ba91-4518-884f-24764b53d417)
+   ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/17c35372-623b-48fa-b174-dd334994fe6e)
+
+
 
 
  
-    ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/d0995cb9-dd07-41a6-ab92-1509a62a3bb2)
+   ![image](https://github.com/VuLanTuong/TH_LTTBDD/assets/96322143/2001a9bd-a08d-4755-89d5-590c45d4e24a)
+
 
 
 
