@@ -17,8 +17,6 @@ export default function App() {
       <View style={{
         display: 'flex',
         flexDirection: 'row'
-
-
       }} >
         <Image
           source={require('./assets/usb2.png')}
