@@ -8,10 +8,23 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-function handleColor({ color }) {
-  console.log(color)
-}
-function DetailProduct({ navigation, image }) {
+function DetailProduct({ navigation, route }) {
+  const { imageSource } = route.params;
+  // var [x, setX] = React.useState(require('./assets/vs_blue.png'))
+
+  let x = require('./assets/vs_blue.png');
+
+  if (imageSource) {
+    for (let i = 0; i < 1; i++) {
+      let filename = imageSource.substring(imageSource.lastIndexOf('/') + 1,
+        imageSource.lastIndexOf('.') - 20);
+      filename += "png"
+      x = (require('./assets/' + filename))
+    }
+
+
+  }
+
   return (
     <View style={styles.container}>
       <View style={{
@@ -20,7 +33,8 @@ function DetailProduct({ navigation, image }) {
         alignItems: 'center',
         flexDirection: 'column'
       }}>
-        <Image source={require('./assets/vs_blue.png')} style={{
+
+        <Image source={x} style={{
           width: '301px',
           height: '361px',
         }} />
@@ -183,7 +197,7 @@ function DetailProduct({ navigation, image }) {
 }
 
 
-function DetailsColor() {
+function DetailsColor({ navigation }) {
   var [image, setImage] = React.useState(require('./assets/vs_blue.png'))
 
   return (
@@ -272,7 +286,7 @@ function DetailsColor() {
           marginTop: '10px',
           border: '0px'
         }}>
-          <TouchableOpacity style={{
+          <Pressable style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -286,9 +300,10 @@ function DetailsColor() {
 
           }}
             onPress={() => {
-              <handleColor color={image} />
-              navigation.navigate('Product')
-              handleColor()
+
+              navigation.navigate('Product', {
+                imageSource: image
+              })
             }
 
             }
@@ -302,7 +317,7 @@ function DetailsColor() {
               fontWeight: '700'
             }}>XONG</Text>
 
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </View>
 
@@ -321,7 +336,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Product" component={DetailProduct} />
+        <Stack.Screen name="Product" component={DetailProduct} initialParams={{ itemId: 86 }} />
         <Stack.Screen name="Details" component={DetailsColor} />
       </Stack.Navigator>
     </NavigationContainer>
