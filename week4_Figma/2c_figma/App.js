@@ -11,6 +11,11 @@ export default function App() {
   const [haveSymbolChecked, setSymbolChecked] = useState(false);
   const [passwordLength, setPasswordLength] = useState('');
   const [passwordGenerate, setPasswordGenerate] = useState('');
+
+  const handleFillPasswordLength = (passwordLength) => {
+    setPasswordLength(passwordLength);
+  }
+
   const handlePasswordLength = (passwordLength) => {
     if (passwordLength >= 4)
       setPasswordLength(passwordLength);
@@ -18,9 +23,13 @@ export default function App() {
       alert("Length >= 4")
     }
   };
+
   const handlePassword = () => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.#@*&';
     let passwordGenerate = "";
-    let indexPass = passwordLength - passwordGenerate.length;
+
+
+
     if (haveLowerChecked)
       passwordGenerate += "a"
     if (haveUpperChecked)
@@ -30,16 +39,25 @@ export default function App() {
     if (haveSymbolChecked)
       passwordGenerate += "*"
 
+    let indexPass = passwordLength - passwordGenerate.length;
+
+    console.log(indexPass)
+
     if (passwordGenerate.length < passwordLength) {
 
-      for (let i = 0; i < indexPass; i++) {
-        passwordGenerate += i
+      for (let i = 1; i <= indexPass; i++) {
+        passwordGenerate += characters.charAt(Math.floor(Math.random() * passwordLength));
       }
 
     }
     console.log(passwordGenerate)
     setPasswordGenerate(passwordGenerate);
   };
+
+  const handleAll = () => {
+    handlePasswordLength(passwordLength),
+      handlePassword()
+  }
 
 
 
@@ -108,7 +126,7 @@ export default function App() {
               fontSize: '18px'
             }}
               value={passwordLength}
-              onChangeText={handlePasswordLength}
+              onChangeText={handleFillPasswordLength}
               onChange={''}
             />
           </View>
@@ -250,7 +268,7 @@ export default function App() {
                 width: '259px'
 
               }}
-              onPress={handlePassword}
+              onPress={handleAll}
             >
               <Text
                 style={{
