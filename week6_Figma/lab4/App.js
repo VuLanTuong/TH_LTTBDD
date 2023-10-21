@@ -144,9 +144,18 @@ function ListProduct({ navigation }) {
 const FooterMenu = () => {
   return (
     <View style={styles.footer}>
-      <Text style={styles.menuText}>Menu Item 1</Text>
-      <Text style={styles.menuText}>Menu Item 2</Text>
-      <Text style={styles.menuText}>Menu Item 3</Text>
+      <Image style={{
+        height: '23px',
+        width: '18px'
+      }} source={require('./assets/list.png')} />
+      <Image style={{
+        height: '24px',
+        width: '24px'
+      }} source={require('./assets/Vector.png')} />
+      <Image style={{
+        height: '24px',
+        width: '24px'
+      }} source={require('./assets/back.png')} />
     </View>
   );
 };
@@ -166,17 +175,20 @@ function App() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          headerTitle: 'Chat',
+          headerTitle: () => (
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', gap: '150px' }}>
+              <Image
+                source={require('./assets/back.png')}
+                style={{ width: 20, height: 20, }}
+              />
+              <Text>Chat</Text>
+              <Image
+                source={require('./assets/cart.png')}
+                style={{ width: 20, height: 20 }}
+              />
+            </View>
+          ),
           headerTitleAlign: 'center',
-
-          // headerBackground: () => (
-          //   <Image
-          //     style={styles.icon}
-          //     source={require('./assets/arrow-left.png')}
-          //   />
-          // )
-          // headerTitle: () => <CustomHeader />
-
 
         }}
       >
