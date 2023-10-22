@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { TextInput } from 'react-native';
 import { Pressable } from 'react-native';
 import { FlatList } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -76,10 +75,25 @@ function Item({ name, price, image, decription, onPress }) {
 }
 
 function ListProduct({ navigation }) {
+  const [value, setValue] = useState();
+  const [product, setProduct] = useState(DATA);
+
+  const filteredProduct = value
+    ? product.filter((i) =>
+      i.name.toLowerCase().includes(value.toLowerCase())
+    )
+    : product;
+
+
   return (
     <View>
       <View>
-        <Text>Search food</Text>
+        <TextInput style={{
+          height: '46px',
+          width: '226px',
+          marginLeft: '25px',
+          backgroundColor: '#C4C4C4'
+        }} placeholder='Search Food' onChangeText={(value) => { setValue(value) }}></TextInput>
       </View>
       <View style={{
         display: 'flex',
@@ -97,7 +111,9 @@ function ListProduct({ navigation }) {
           <Text>Floating</Text>
         </Pressable>
       </View>
-      <FlatList data={DATA}
+      <FlatList
+        data={filteredProduct}
+        // data={DATA}
         renderItem={({ item }) => {
           return (
             <View style={{
