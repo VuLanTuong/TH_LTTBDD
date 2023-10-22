@@ -249,9 +249,6 @@ function DetailProduct({ navigation, route }) {
 
       </View>
 
-
-
-
     </View>
   )
 }

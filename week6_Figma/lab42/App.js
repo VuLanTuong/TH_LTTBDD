@@ -114,55 +114,18 @@ function Item({ title, image, price, onPress }) {
 
   )
 }
-
-function List() {
-  return (
-    <View>
-      <Image style={{
-        height: '23px',
-        width: '13px'
-      }} source={require('./assets/list.png')} />
-    </View>
-  )
-}
-function Home() {
-  return (
-    <View>
-      <Image style={{
-        height: '24px',
-        width: '24px'
-      }} source={require('./assets/home.png')} />
-    </View>
-  )
-}
-
-function Back() {
-  return (
-    <View>
-      <Image style={{
-        height: '24px',
-        width: '24px'
-      }} source={require('./assets/back.png')} />
-    </View>
-  )
-}
-
 function DetailProduct({ navigation, route }) {
   const { item } = route.params;
   const [quantity, setQuantity] = useState(1);
-
   const handleThem = () => {
     setQuantity(quantity + 1);
   }
   const handleXoa = () => {
     setQuantity(quantity - 1);
   }
-
   return (
     <View style={{
       flex: '1'
-
-
     }}>
       <View style={{
         display: 'flex',
@@ -182,7 +145,6 @@ function DetailProduct({ navigation, route }) {
 
         <Text>{item.title}</Text>
         <Text>{item.price + ' vnd'}</Text>
-
         <Pressable onPress={handleThem} style={{
           border: '2px solid red'
         }}>
@@ -198,10 +160,7 @@ function DetailProduct({ navigation, route }) {
             Xoa
           </Text>
         </Pressable>
-
         <Text>{quantity}</Text>
-
-
         <Pressable onPress={() => {
           navigation.navigate('Payment',
             {
@@ -216,13 +175,9 @@ function DetailProduct({ navigation, route }) {
             Mua ngay
           </Text>
         </Pressable>
-
       </View>
-
-
     </View>
   )
-
 }
 function Payment({ navigation, route }) {
   // if (!route.params || !route.params.item || !route.params.quantity) {
@@ -310,8 +265,6 @@ function ListProduct({ navigation }) {
               navigation.navigate('DetailProduct', {
                 item: item
               })
-
-
             }}
           />}
         keyExtractor={item => item.id}
@@ -393,7 +346,7 @@ function Header() {
           marginTop: '2px'
         }}>Day cap usb</Text>
       </View>
-      <Image style={styles.icon} source={require('./assets/cart.png')} />
+      <Image options={{}} style={styles.icon} source={require('./assets/cart.png')} />
       <Image style={{
         height: '4px',
         width: '18px',
