@@ -10,10 +10,8 @@ import Toast from 'react-native-toast-message';
 const Cart = ({ navigation }) => {
     const cart = useSelector((state) => state.cart.cart);
     const dispatch = useDispatch();
-    // console.log(cart);
     let total = calcAmount(cart)
     const Item = ({ item }) => {
-        // console.log(item.item);
         const addItemToCart = (item) => {
             dispatch(addToCart(item));
         };
@@ -33,12 +31,12 @@ const Cart = ({ navigation }) => {
         console.log(item.quantity);
         return <View style={{ flexDirection: 'row', width: '100%', justifyContent: "space-between" }}>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: '20px' }}>
                 <View>
-                    <Image style={{ width: 100, height: 100, resizeMode: 'contain' }} source={{ uri: item.image }} />
+                    <Image style={{ width: 60, height: 60, resizeMode: 'contain' }} source={{ uri: item.image }} />
                 </View>
                 <View style={{ flexDirection: 'column' }}>
-                    <Text style={{ fontSize: 24 }}>{item.name}</Text>
+                    <Text style={{ fontSize: 16 }}>{item.name}</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <Feather name="play" style={{ fontSize: 20 }} />
                         <Text>$ {item.price}</Text>
@@ -47,19 +45,19 @@ const Cart = ({ navigation }) => {
 
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                <TouchableOpacity
-                    onPress={() => increaseQuantity(item)}
-                >
-                    <AntDesign
-                        name="plus"
-                        style={{ fontSize: 24, padding: 10, borderRadius: 50, backgroundColor: '#D0D4CA' }} />
-                </TouchableOpacity>
-                <Text style={{ textAlign: 'center', width: 40, fontSize: 24 }}>{item.quantity}</Text>
+
+
                 <TouchableOpacity
                     onPress={() => decreaseQuantity(item)}
                 >
-                    <AntDesign
-                        name="minus"
+                    <Image source={require('../assets/move.png')}
+                        style={{ fontSize: 24, padding: 10, borderRadius: 50, backgroundColor: '#D0D4CA' }} />
+                </TouchableOpacity>
+                <Text style={{ textAlign: 'center', width: 40, fontSize: 16 }}>{item.quantity}</Text>
+                <TouchableOpacity
+                    onPress={() => increaseQuantity(item)}
+                >
+                    <Image source={require('../assets/add.png')}
                         style={{ fontSize: 24, padding: 10, borderRadius: 50, backgroundColor: '#D0D4CA' }} />
                 </TouchableOpacity>
             </View>
@@ -97,28 +95,30 @@ const Cart = ({ navigation }) => {
                     <Ant name="search1" style={{ fontSize: 30, marginRight: 15 }} />
                 </View>
                 {
-                    cart.length == 0 ? <Text style={{ fontSize: 30 }}>Empty</Text> :
+                    cart.length == 0 ? <Text style={{ fontSize: 24 }}>Nothing in your cart</Text> :
                         <FlatList data={cart} renderItem={({ item }) => <Item item={item} />} />
                 }
             </View>
             <View style={{
-                flexDirection: 'row',
-                height: 50,
+                flexDirection: 'column',
+                height: 100,
                 alignItems: 'center',
                 justifyContent: 'center'
             }}>
-                <Text style={{ flex: 40, textAlign: 'center', fontSize: 24, backgroundColor: '#FFF6F6' }}>Amount :${total}</Text>
+                <Text style={{ flex: 40, textAlign: 'center', fontSize: 20 }}>Amount :${total}</Text>
                 <TouchableOpacity
                     style={{
-                        backgroundColor: '#7752FE',
+                        backgroundColor: '#EFB034',
                         flex: 60,
-                        height: '100%',
+                        height: '44px',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        borderRadius: 10
+                        borderRadius: 10,
+                        width: '90%'
+
                     }}
                 >
-                    <Text style={{ fontSize: 24, textTransform: 'uppercase' }}>Pay now</Text>
+                    <Text style={{ fontSize: 20, textTransform: 'uppercase', color: 'white' }}>Pay now</Text>
                 </TouchableOpacity>
             </View>
         </View>

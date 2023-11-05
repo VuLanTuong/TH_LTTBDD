@@ -11,7 +11,7 @@ const Drink = ({ navigation }) => {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart.cart);
     useEffect(() => {
-        fetch("https://653f53e99e8bd3be29e048c7.mockapi.io/tuan7/tuan7-drink")
+        fetch("https://65476166902874dff3ac3936.mockapi.io/drink")
             .then(response => response.json())
             .then(responseData => {
                 setData(responseData);
@@ -51,15 +51,24 @@ const Drink = ({ navigation }) => {
                 "space-between",
             margin: '10px',
             border: '1px solid grey',
-            alignItems: 'center'
+            alignItems: 'center',
+            height: '64px',
+            borderRadius: '10px',
+            padding: '10px'
         }}>
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <View>
-                    <Image style={{ width: 100, height: 100, resizeMode: 'contain' }} source={{ uri: item.image }} />
+                    <Image style={{
+                        width: '60px',
+                        height: '60px',
+                        resizeMode: 'contain',
+                        padding: '10px'
+                    }}
+                        source={{ uri: item.image }} />
                 </View>
                 <View style={{ flexDirection: 'column' }}>
-                    <Text style={{ fontSize: 24 }}>{item.name}</Text>
+                    <Text style={{ fontSize: 16 }}>{item.name}</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <Feather name="play" style={{ fontSize: 20 }} />
                         <Text>$ {item.price}</Text>
@@ -68,17 +77,25 @@ const Drink = ({ navigation }) => {
 
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                <TouchableOpacity onPress={() => addItemToCart(item)}>
-                    <AntDesign name="plus"
-                        style={{ fontSize: 24, padding: 10, borderRadius: 50, backgroundColor: '#D0D4CA' }} />
-                </TouchableOpacity>
-                <Text style={{ textAlign: 'center', width: 40, fontSize: 24 }}>1</Text>
                 <TouchableOpacity
                     onPress={() => decreaseQuantity(item)}
                 >
-                    <AntDesign name="minus"
+                    <Image source={require('../assets/move.png')}
                         style={{ fontSize: 24, padding: 10, borderRadius: 50, backgroundColor: '#D0D4CA' }} />
                 </TouchableOpacity>
+                <Text style={{ textAlign: 'center', width: 40, fontSize: 16 }}>1</Text>
+                <TouchableOpacity onPress={() => addItemToCart(item)}>
+                    <Image source={require('../assets/add.png')}
+                        style={{
+                            fontSize: 24,
+                            padding: 10,
+                            borderRadius: 50,
+                            backgroundColor: '#D0D4CA',
+                            margin: '5px'
+                        }} />
+                </TouchableOpacity>
+
+
 
             </View>
         </View>
@@ -105,8 +122,13 @@ const Drink = ({ navigation }) => {
                 style={{ width: '100%' }}
                 data={data}
                 renderItem={({ item }) => <Item item={item} />} />
-            <TouchableOpacity onPress={() => navigation.navigate('cart')} style={{ width: '100%', justifyContent: 'center', backgroundColor: '#89CFF3', height: 50 }}>
-                <Text style={{ textTransform: 'uppercase', textAlign: 'center' }}>go to cart</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('cart')} style={{
+                width: '347px', justifyContent: 'center',
+                backgroundColor: '#EFB034', height: 50,
+                borderRadius: '10px',
+                height: '44px'
+            }}>
+                <Text style={{ textTransform: 'uppercase', textAlign: 'center', color: 'white' }}>go to cart</Text>
             </TouchableOpacity>
             <Toast />
         </View>

@@ -18,10 +18,26 @@ export default function App() {
           headerShown: false,
 
         }}>
-          <Stack.Screen name='drink' component={Drink} />
-          <Stack.Screen name='home' component={Home} />
-          <Stack.Screen name='shop' component={ShopNearMe} />
-          <Stack.Screen name='cart' component={Cart} />
+          <Stack.Screen name='drink' component={Drink} options={{
+            headerTitleStyle: {
+              fontSize: '24px'
+            }
+          }} />
+          <Stack.Screen name='home' component={Home} options={{
+            headerTitleStyle: {
+              fontSize: '24px'
+            }
+          }} />
+          <Stack.Screen name='shop' component={ShopNearMe} options={{
+            headerTitleStyle: {
+              fontSize: '24px'
+            }
+          }} />
+          <Stack.Screen name='cart' component={Cart} options={{
+            headerTitleStyle: {
+              fontSize: '24px'
+            }
+          }} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

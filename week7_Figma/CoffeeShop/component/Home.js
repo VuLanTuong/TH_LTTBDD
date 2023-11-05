@@ -36,7 +36,7 @@ const Home = ({ navigation }) => {
                         justifyContent: 'center',
                         borderRadius: 10
                     }}>
-                    <Text style={{ textTransform: "uppercase", fontSize: 24, fontWeight: '600' }}
+                    <Text style={{ textTransform: "uppercase", fontSize: 18, fontWeight: '600' }}
                     >GET STARTED
                     </Text>
                 </TouchableOpacity>
