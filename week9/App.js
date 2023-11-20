@@ -14,7 +14,7 @@ const AppContent = () => {
             <View style={
                 {
                     display: 'flex',
-                    gap: 5
+                    gap: 10
                 }
             }>
                 <View style={{
@@ -49,14 +49,16 @@ const AppContent = () => {
                         }}
                         placeholder='number 2'
                         inputMode='numeric'
-                        value={number1}
+                        value={number2}
                         onChangeText={value => dispatch({
                             type: 'TWO',
                             payload: value
                         })}
                     />
                 </View>
-                <Text>result {result}</Text>
+                <Text style={{
+                    border: '1px solid black'
+                }}>Result {result}</Text>
             </View>
             <View style={{
                 display: 'flex',
