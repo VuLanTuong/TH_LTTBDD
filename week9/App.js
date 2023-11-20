@@ -11,47 +11,82 @@ const AppContent = () => {
 
     return (
         <View>
-            <View >
-                <TextInput
-                    placeholder='number 1'
-                    inputMode='numeric'
-                    value={number1}
-                    onChangeText={value => dispatch({
-                        type: 'ONE',
-                        payload: value
-                    })}
-                />
-                <TextInput
-                    placeholder='number 2'
-                    inputMode='numeric'
-                    value={number2}
-                    onChangeText={value => dispatch({
-                        type: 'TWO',
-                        payload: value
-                    })}
-                />
+            <View style={
+                {
+                    display: 'flex',
+                    gap: 5
+                }
+            }>
+                <View style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap: 5
+                }}>
+                    <Text>Number 1:</Text>
+                    <TextInput
+                        style={{
+                            border: '1px solid black'
+                        }}
+                        placeholder='number 1'
+                        inputMode='numeric'
+                        value={number1}
+                        onChangeText={value => dispatch({
+                            type: 'ONE',
+                            payload: value
+                        })}
+                    />
+                </View>
+
+                <View style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap: 5
+                }}>
+                    <Text>Number 2:</Text>
+                    <TextInput
+                        style={{
+                            border: '1px solid black'
+                        }}
+                        placeholder='number 2'
+                        inputMode='numeric'
+                        value={number1}
+                        onChangeText={value => dispatch({
+                            type: 'TWO',
+                            payload: value
+                        })}
+                    />
+                </View>
                 <Text>result {result}</Text>
             </View>
             <View style={{
                 display: 'flex',
-                flexDirection: 'row', gap: 20
+                flexDirection: 'row', gap: 20,
+                marginTop: 5
             }}>
-                <Pressable onPress={() => {
+                <Pressable style={
+                    styles.cacl
+                } onPress={() => {
                     dispatch({ type: 'CONG' });
                 }}>
                     <Text>+</Text>
                 </Pressable>
-                <Pressable onPress={() => {
+                <Pressable style={
+                    styles.cacl
+                } onPress={() => {
                     dispatch({ type: 'TRU' });
                 }}>
                     <Text>-</Text>
                 </Pressable>
-                <Pressable onPress={() => {
+                <Pressable style={
+                    styles.cacl
+                } onPress={() => {
                     dispatch({ type: 'NHAN' });
                 }}>
                     <Text>*</Text>
                 </Pressable>
-                <Pressable onPress={() => {
+                <Pressable style={
+                    styles.cacl
+                } onPress={() => {
                     dispatch({ type: 'CHIA' });
                 }}>
                     <Text>/</Text>
@@ -76,4 +111,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    cacl: {
+        border: '1px solid black', padding: 10
+    }
 });
