@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import store from './redux/Store'
-import increment from './redux/Action'
 import { Provider, useDispatch, useSelector } from 'react-redux';
 
 const AppContent = () => {
